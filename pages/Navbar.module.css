@@ -1,0 +1,32 @@
+
+
+.element{
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+.element:hover{
+    box-shadow: 2px 2px 15px 5px black;
+    transition-duration: 200ms;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+.cancel:hover{
+    box-shadow: 2px 2px 15px 5px lightblue;
+    transition-duration: 200ms;
+}
+.team_card{
+    box-shadow: 2px 2px 15px 5px white;
+    transition-duration: 200ms;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+.team_card:hover{
+    box-shadow: 2px 2px 15px 5px black;
+    background-color: white;
+    color: black;
+    transition-duration: 200ms;
+}
