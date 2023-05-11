@@ -3,6 +3,7 @@ import allData from './heliverse_mock_data.json';
 import { PaginatedData } from './paginatedData';
 import { BsSearch } from "react-icons/bs";
 import MyStyle from './Navbar.module.css';
+import Image from 'next/image';
 
 const HomeComponent = () => {
     const [current, setCurrent] = useState(1);
@@ -116,16 +117,16 @@ const HomeComponent = () => {
         localStorage.setItem('team', JSON.stringify(markedAllUser));
     }
 
-    const [teamMember, setTeamMember] = useState([]); 
+    const [teamMember, setTeamMember] = useState([]);
     // Exploring team
-    const teamDetails = () =>{
+    const teamDetails = () => {
         const localStorageUser = JSON.parse(localStorage.getItem('team'));
-        setTeamMember(localStorageUser); 
+        setTeamMember(localStorageUser);
     }
     // useEffect(()=>{
-        
+
     // },[])
-    console.log(teamMember); 
+    console.log(teamMember);
     const [teamMake, setTeamMake] = useState(false);
     return (
 
@@ -181,7 +182,7 @@ const HomeComponent = () => {
                             backgroundSize: "100%",
                             backgroundRepeat: "repeat",
                         }} className={`normal-case btn btn-sm border-0 text-black`}>Availability</label>
-                    </div> 
+                    </div>
                 </div>
 
             </div>
@@ -189,13 +190,9 @@ const HomeComponent = () => {
             <div className='grid grid-cols-1 gap-4 mt-4 lg:grid-cols-4 md:grid-cols-2'>
                 {
                     data.map((singleData, index) => <div key={index} className={`bg-blue-300 ${MyStyle.element} w-80 card md:w-64 lg:w-72`}>
-                        <div className="p-2">
+                        <div className="p-4">
                             <div className="flex items-center card-actions">
-                                <div className="avatar">
-                                    <div className="w-16 border border-red-500 rounded-full">
-                                        <img src={singleData.avatar} alt="" loading="lazy" />
-                                    </div>
-                                </div>
+                                
                                 <div>
                                     <div className='flex items-center justify-between gap-x-2'>
                                         <h1>{singleData?.first_name + " " + singleData?.last_name}</h1>
@@ -299,38 +296,39 @@ const HomeComponent = () => {
                     <div className="w-11/12 max-w-5xl modal-box">
                         <h3 className="flex justify-center mb-2 text-3xl">Team details</h3>
                         <div className='flex justify-center'>
-                        <div className='grid grid-cols-1 gap-4 mt-4 lg:grid-cols-4 md:grid-cols-2'>
-                            {/* Show the user by card */}
-                            {
-                                teamMember.map((user, index) => 
-                                    <div key={index} className={`flex items-center w-full p-2 border border-red-400 rounded hover:cursor-pointer ${MyStyle.team_card}`}>
-                                        <div className='w-24'>
-                                            <img className='w-24' src={user?.avatar} alt="" loading="lazy" />
+                            <div className='grid grid-cols-1 gap-4 mt-4 lg:grid-cols-4 md:grid-cols-2'>
+                                {/* Show the user by card */}
+                                {
+                                    teamMember.map((user, index) =>
+                                        <div key={index} className={`flex items-center w-full p-2 border border-red-400 rounded hover:cursor-pointer ${MyStyle.team_card}`}>
+                                            <div className=''>
+                                                
+                                                {/* <img className='w-24' src={user?.avatar} alt="" loading="lazy" /> */}
+                                            </div>
+
+                                            <div>
+                                                <h1>{user.first_name + user?.last_name}</h1>
+                                                <p>{user?.email}</p>
+                                                <p><span>{user?.gender}</span> <span>{user?.available ? <span className='ml-4 text-green-500'>Available</span> : <span className='ml-4 text-red-500'>Not Available</span>}</span></p>
+                                            </div>
+
                                         </div>
-
-                                        <div>
-                                        <h1>{user.first_name + user?.last_name}</h1>
-                                        <p>{user?.email}</p>
-                                        <p><span>{user?.gender}</span> <span>{user?.available ? 'Available' : 'Not available'}</span> </p>
-                                        </div>
-
-                                    </div>
-                                )
-                            }
-                        </div>
+                                    )
+                                }
+                            </div>
                         </div>
 
-                        
+
 
                         <div className='flex justify-end mt-2'>
-                        <label onClick={()=> setTeamMake(false)} htmlFor="explore-team" style={{
-                            backgroundImage: "linear-gradient(45deg ,#FEA1BF, #BFEAF5)",
-                            backgroundSize: "100%",
-                            backgroundRepeat: "repeat",
-                        }} className={`normal-case btn ${MyStyle.cancel} btn-sm border-0 text-xl text-black mt-2 w-32`}>Cancel</label>
+                            <label onClick={() => setTeamMake(false)} htmlFor="explore-team" style={{
+                                backgroundImage: "linear-gradient(45deg ,#FEA1BF, #BFEAF5)",
+                                backgroundSize: "100%",
+                                backgroundRepeat: "repeat",
+                            }} className={`normal-case btn ${MyStyle.cancel} btn-sm border-0 text-xl text-black mt-2 w-32`}>Cancel</label>
                         </div>
 
-                        
+
 
                     </div>
                 </div>
