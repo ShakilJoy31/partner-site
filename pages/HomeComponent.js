@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import allData from './heliverse_mock_data.json';
-import { PaginatedData } from './paginatedData';
+import { paginatedData } from './healper/paginatedData';
 import { BsSearch } from "react-icons/bs";
 import MyStyle from './Navbar.module.css';
 import Image from 'next/image';
@@ -10,17 +10,17 @@ const HomeComponent = () => {
     const [iniData, setIniData] = useState(allData.slice(0, 20));
     const [data, setData] = useState(allData.slice(0, 20));
     // const forPagination = Math.ceil(allData.length / 20);
-    PaginatedData(current);
+    paginatedData(current);
     const handlePrevious = () => {
         setCurrent(current - 1);
-        const previousData = PaginatedData(current);
+        const previousData = paginatedData(current);
         setData(previousData);
         setIniData(previousData);
     }
     const handleNext = () => {
         // setData()
         setCurrent(current + 1);
-        const nextData = PaginatedData(current);
+        const nextData = paginatedData(current);
         setData(nextData);
         setIniData(nextData);
     }
