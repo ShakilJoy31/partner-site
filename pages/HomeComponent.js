@@ -3,206 +3,206 @@ import allData from './heliverse_mock_data.json';
 import MyStyle from './Navbar.module.css';
 
 const HomeComponent = () => {
-    const paginatedData = (current=1) => {
-        if(current == 1){
-            const lessData = allData.slice(0,20); 
-            return lessData; 
+    const paginatedData = (current = 1) => {
+        if (current == 1) {
+            const lessData = allData.slice(0, 20);
+            return lessData;
         }
-        if(current ==  2){
-            const lessData = allData.slice(20,40); 
-            return lessData; 
+        if (current == 2) {
+            const lessData = allData.slice(20, 40);
+            return lessData;
         }
-        if(current ==  3){
-            const lessData = allData.slice(40,60); 
-            return lessData; 
+        if (current == 3) {
+            const lessData = allData.slice(40, 60);
+            return lessData;
         }
-        if(current ==  4){
-            const lessData = allData.slice(60,80); 
-            return lessData; 
+        if (current == 4) {
+            const lessData = allData.slice(60, 80);
+            return lessData;
         }
-        if(current ==  5){
-            const lessData = allData.slice(80,100); 
-            return lessData; 
+        if (current == 5) {
+            const lessData = allData.slice(80, 100);
+            return lessData;
         }
-        if(current ==  6){
-            const lessData = allData.slice(100,120); 
-            return lessData; 
+        if (current == 6) {
+            const lessData = allData.slice(100, 120);
+            return lessData;
         }
-        if(current ==  7){
-            const lessData = allData.slice(120,140); 
-            return lessData; 
+        if (current == 7) {
+            const lessData = allData.slice(120, 140);
+            return lessData;
         }
-        if(current ==  8){
-            const lessData = allData.slice(140,160); 
-            return lessData; 
+        if (current == 8) {
+            const lessData = allData.slice(140, 160);
+            return lessData;
         }
-        if(current ==  9){
-            const lessData = allData.slice(160,180); 
-            return lessData; 
+        if (current == 9) {
+            const lessData = allData.slice(160, 180);
+            return lessData;
         }
-        if(current ==  10){
-            const lessData = allData.slice(180,200); 
-            return lessData; 
+        if (current == 10) {
+            const lessData = allData.slice(180, 200);
+            return lessData;
         }
-        if(current ==  11){
-            const lessData = allData.slice(200,220); 
-            return lessData; 
+        if (current == 11) {
+            const lessData = allData.slice(200, 220);
+            return lessData;
         }
-        if(current ==  12){
-            const lessData = allData.slice(0,20); 
-            return lessData; 
+        if (current == 12) {
+            const lessData = allData.slice(0, 20);
+            return lessData;
         }
-        if(current ==  13){
-            const lessData = allData.slice(0,20); 
-            return lessData; 
+        if (current == 13) {
+            const lessData = allData.slice(0, 20);
+            return lessData;
         }
-        if(current ==  14){
-            const lessData = allData.slice(0,20); 
-            return lessData; 
+        if (current == 14) {
+            const lessData = allData.slice(0, 20);
+            return lessData;
         }
-        if(current ==  15){
-            const lessData = allData.slice(0,20); 
-            return lessData; 
+        if (current == 15) {
+            const lessData = allData.slice(0, 20);
+            return lessData;
         }
-        if(current ==  16){
-            const lessData = allData.slice(0,20); 
-            return lessData; 
+        if (current == 16) {
+            const lessData = allData.slice(0, 20);
+            return lessData;
         }
-        if(current ==  17){
-            const lessData = allData.slice(0,20); 
-            return lessData; 
+        if (current == 17) {
+            const lessData = allData.slice(0, 20);
+            return lessData;
         }
-        if(current ==  18){
-            const lessData = allData.slice(0,20); 
-            return lessData; 
+        if (current == 18) {
+            const lessData = allData.slice(0, 20);
+            return lessData;
         }
-        if(current ==  19){
-            const lessData = allData.slice(0,20); 
-            return lessData; 
+        if (current == 19) {
+            const lessData = allData.slice(0, 20);
+            return lessData;
         }
-        if(current ==  20){
-            const lessData = allData.slice(0,20); 
-            return lessData; 
+        if (current == 20) {
+            const lessData = allData.slice(0, 20);
+            return lessData;
         }
-        if(current ==  21){
-            const lessData = allData.slice(0,20); 
-            return lessData; 
+        if (current == 21) {
+            const lessData = allData.slice(0, 20);
+            return lessData;
         }
-        if(current ==  22){
-            const lessData = allData.slice(0,20); 
-            return lessData; 
+        if (current == 22) {
+            const lessData = allData.slice(0, 20);
+            return lessData;
         }
-        if(current ==  23){
-            const lessData = allData.slice(0,20); 
-            return lessData; 
+        if (current == 23) {
+            const lessData = allData.slice(0, 20);
+            return lessData;
         }
-        if(current ==  24){
-            const lessData = allData.slice(0,20); 
-            return lessData; 
+        if (current == 24) {
+            const lessData = allData.slice(0, 20);
+            return lessData;
         }
-        if(current ==  25){
-            const lessData = allData.slice(0,20); 
-            return lessData; 
+        if (current == 25) {
+            const lessData = allData.slice(0, 20);
+            return lessData;
         }
-        if(current ==  26){
-            const lessData = allData.slice(0,20); 
-            return lessData; 
+        if (current == 26) {
+            const lessData = allData.slice(0, 20);
+            return lessData;
         }
-        if(current ==  27){
-            const lessData = allData.slice(0,20); 
-            return lessData; 
+        if (current == 27) {
+            const lessData = allData.slice(0, 20);
+            return lessData;
         }
-        if(current ==  28){
-            const lessData = allData.slice(0,20); 
-            return lessData; 
+        if (current == 28) {
+            const lessData = allData.slice(0, 20);
+            return lessData;
         }
-        if(current ==  29){
-            const lessData = allData.slice(0,20); 
-            return lessData; 
+        if (current == 29) {
+            const lessData = allData.slice(0, 20);
+            return lessData;
         }
-        if(current ==  30){
-            const lessData = allData.slice(0,20); 
-            return lessData; 
+        if (current == 30) {
+            const lessData = allData.slice(0, 20);
+            return lessData;
         }
-        if(current ==  31){
-            const lessData = allData.slice(0,20); 
-            return lessData; 
+        if (current == 31) {
+            const lessData = allData.slice(0, 20);
+            return lessData;
         }
-        if(current ==  32){
-            const lessData = allData.slice(0,20); 
-            return lessData; 
+        if (current == 32) {
+            const lessData = allData.slice(0, 20);
+            return lessData;
         }
-        if(current ==  33){
-            const lessData = allData.slice(0,20); 
-            return lessData; 
+        if (current == 33) {
+            const lessData = allData.slice(0, 20);
+            return lessData;
         }
-        if(current ==  34){
-            const lessData = allData.slice(0,20); 
-            return lessData; 
+        if (current == 34) {
+            const lessData = allData.slice(0, 20);
+            return lessData;
         }
-        if(current ==  35){
-            const lessData = allData.slice(0,20); 
-            return lessData; 
+        if (current == 35) {
+            const lessData = allData.slice(0, 20);
+            return lessData;
         }
-        if(current ==  36){
-            const lessData = allData.slice(0,20); 
-            return lessData; 
+        if (current == 36) {
+            const lessData = allData.slice(0, 20);
+            return lessData;
         }
-        if(current ==  37){
-            const lessData = allData.slice(0,20); 
-            return lessData; 
+        if (current == 37) {
+            const lessData = allData.slice(0, 20);
+            return lessData;
         }
-        if(current ==  38){
-            const lessData = allData.slice(0,20); 
-            return lessData; 
+        if (current == 38) {
+            const lessData = allData.slice(0, 20);
+            return lessData;
         }
-        if(current ==  39){
-            const lessData = allData.slice(0,20); 
-            return lessData; 
+        if (current == 39) {
+            const lessData = allData.slice(0, 20);
+            return lessData;
         }
-        if(current ==  40){
-            const lessData = allData.slice(0,20); 
-            return lessData; 
+        if (current == 40) {
+            const lessData = allData.slice(0, 20);
+            return lessData;
         }
-        if(current ==  41){
-            const lessData = allData.slice(0,20); 
-            return lessData; 
+        if (current == 41) {
+            const lessData = allData.slice(0, 20);
+            return lessData;
         }
-        if(current ==  42){
-            const lessData = allData.slice(0,20); 
-            return lessData; 
+        if (current == 42) {
+            const lessData = allData.slice(0, 20);
+            return lessData;
         }
-        if(current ==  43){
-            const lessData = allData.slice(0,20); 
-            return lessData; 
+        if (current == 43) {
+            const lessData = allData.slice(0, 20);
+            return lessData;
         }
-        if(current ==  44){
-            const lessData = allData.slice(0,20); 
-            return lessData; 
+        if (current == 44) {
+            const lessData = allData.slice(0, 20);
+            return lessData;
         }
-        if(current ==  45){
-            const lessData = allData.slice(0,20); 
-            return lessData; 
+        if (current == 45) {
+            const lessData = allData.slice(0, 20);
+            return lessData;
         }
-        if(current ==  46){
-            const lessData = allData.slice(0,20); 
-            return lessData; 
+        if (current == 46) {
+            const lessData = allData.slice(0, 20);
+            return lessData;
         }
-        if(current ==  47){
-            const lessData = allData.slice(0,20); 
-            return lessData; 
+        if (current == 47) {
+            const lessData = allData.slice(0, 20);
+            return lessData;
         }
-        if(current ==  48){
-            const lessData = allData.slice(0,20); 
-            return lessData; 
+        if (current == 48) {
+            const lessData = allData.slice(0, 20);
+            return lessData;
         }
-        if(current ==  49){
-            const lessData = allData.slice(0,20); 
-            return lessData; 
+        if (current == 49) {
+            const lessData = allData.slice(0, 20);
+            return lessData;
         }
-        if(current ==  50){
-            const lessData = allData.slice(0,20); 
-            return lessData; 
+        if (current == 50) {
+            const lessData = allData.slice(0, 20);
+            return lessData;
         }
     }
     const [current, setCurrent] = useState(1);
@@ -391,7 +391,9 @@ const HomeComponent = () => {
                     data.map((singleData, index) => <div key={index} className={`bg-blue-300 ${MyStyle.element} w-80 card md:w-64 lg:w-72`}>
                         <div className="p-4">
                             <div className="flex items-center card-actions">
-                                
+
+                            <img src={singleData?.avatar} alt='' />
+
                                 <div>
                                     <div className='flex items-center justify-between gap-x-2'>
                                         <h1>{singleData?.first_name + " " + singleData?.last_name}</h1>
@@ -500,15 +502,14 @@ const HomeComponent = () => {
                                 {
                                     teamMember.map((user, index) =>
                                         <div key={index} className={`flex items-center w-full p-2 border border-red-400 rounded hover:cursor-pointer ${MyStyle.team_card}`}>
-                                            <div className=''>
-                                                
-                                                {/* <img className='w-24' src={user?.avatar} alt="" loading="lazy" /> */}
+                                            <div>
+                                                <img src={user?.avatar} alt="" />
                                             </div>
 
                                             <div>
                                                 <h1>{user.first_name + user?.last_name}</h1>
                                                 <p>{user?.email}</p>
-                                                <p><span>{user?.gender}</span> <span>{user?.available ? <span className='ml-4 text-green-500'>Available</span> : <span className='ml-4 text-red-500'>Not Available</span>}</span></p>
+                                                <p><span>{user?.gender}</span> <span>{user?.available ? <span className='ml-2 text-green-500'>Available</span> : <span className='ml-2 text-red-500'>Not Available</span>}</span></p>
                                             </div>
 
                                         </div>
