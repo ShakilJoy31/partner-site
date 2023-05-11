@@ -496,11 +496,12 @@ const HomeComponent = () => {
                 <div className="modal">
                     <div className="w-11/12 max-w-5xl modal-box">
                         <h3 className="flex justify-center mb-2 text-3xl">Team details</h3>
-                        <div className='flex justify-center'>
+                        {
+                            !teamMember ? <p className='flex justify-center my-2 text-2xl text-red-500'>Select user to make team.</p> : <div className='flex justify-center'>
                             <div className='grid grid-cols-1 gap-4 mt-4 lg:grid-cols-4 md:grid-cols-2'>
                                 {/* Show the user by card */}
                                 {
-                                    teamMember.map((user, index) =>
+                                    teamMember?.map((user, index) =>
                                         <div key={index} className={`flex items-center w-full p-2 border border-red-400 rounded hover:cursor-pointer ${MyStyle.team_card}`}>
                                             <div>
                                                 <img src={user?.avatar} alt="" />
@@ -516,7 +517,9 @@ const HomeComponent = () => {
                                     )
                                 }
                             </div>
-                        </div>
+                        </div> 
+                        }
+                        
 
 
 
