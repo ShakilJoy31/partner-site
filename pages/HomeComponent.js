@@ -340,7 +340,7 @@ const HomeComponent = () => {
                                 backgroundImage: "linear-gradient(45deg, #E08E6D, #E1D4BB)",
                                 backgroundSize: "100%",
                                 backgroundRepeat: "repeat",
-                            }} className={`normal-case btn btn-sm border-0 text-black`}>Make Team</label> : <label onClick={() => setTeamMake(!teamMake)} style={{
+                            }} className={`normal-case btn btn-sm border-0 text-black`}>Testing</label> : <label onClick={() => setTeamMake(!teamMake)} style={{
                                 backgroundImage: "linear-gradient(45deg, #E08E6D, #E1D4BB)",
                                 backgroundSize: "100%",
                                 backgroundRepeat: "repeat",
