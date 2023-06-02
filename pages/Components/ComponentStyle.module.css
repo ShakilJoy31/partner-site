@@ -1,0 +1,79 @@
+/* .recipe {
+    background-image: linear-gradient(45deg, yellow, aliceblue);
+    background-size: 100%;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+} */
+
+/* .selectionCart:hover {
+    box-shadow: 2px 2px 15px 5px lightblue;
+    transition-duration: 380ms;
+    background-color: black;
+    background-size: 100%;
+    background-repeat: repeat;
+} */
+
+
+/* For Different Color of Shadow. */
+.redShadow:hover{
+    box-shadow: 2px 2px 15px 5px red;
+    transition-duration: 200ms;
+}
+
+.lightBlueShadow:hover {
+    box-shadow: 2px 2px 15px 5px lightblue;
+    transition-duration: 200ms;
+}
+
+.blackShadow:hover{
+    box-shadow: 2px 2px 15px 5px black;
+    transition-duration: 200ms;
+}
+
+.blackShadowWithColor:hover{
+    box-shadow: 2px 2px 15px 5px black;
+    transition-duration: 200ms;
+    color: black;
+}
+
+.whiteShadow:hover{
+    box-shadow: 2px 2px 15px 5px white;
+    transition-duration: 200ms;
+}
+
+.littleSpinner {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 5px solid white;
+    border-top-color: black;
+    animation: spin 1.2s ease-in-out infinite;
+}
+.mediumSpinner {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 8px solid white;
+    border-top-color: black;
+    animation: spin 1.2s ease-in-out infinite;
+}
+.bigSpinner {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 10px solid white;
+    border-top-color: black;
+    animation: spin 1.2s ease-in-out infinite;
+}
+
+@keyframes spin {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(720deg);
+    }
+  }

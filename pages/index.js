@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { Inter } from "next/font/google";
-import HomeComponent from "./HomeComponent";
+import HomeComponent from "./Components/HomeComponent";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,15 +25,14 @@ export default function Home() {
         />
       </Head>
       <main
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-          alignItems: "center",
-          minHeight: "100vh",
-        }}
       >
-        <HomeComponent></HomeComponent>
+        <div style={{
+            width: "100%",
+            overflow: "hidden",
+            position: "relative", 
+          }}>
+            <HomeComponent></HomeComponent>
+        </div>
       </main>
     </>
   );
