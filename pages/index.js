@@ -24,14 +24,30 @@ export default function Home() {
           href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
         />
       </Head>
-      <main
-      >
-        <div style={{
+      <main>
+        <div
+          style={{
             width: "100%",
             overflow: "hidden",
-            position: "relative",  
-          }}>
-            <HomeComponent></HomeComponent>
+            position: "relative",
+          }}
+        >
+          <HomeComponent></HomeComponent>
+        </div>
+        <div>
+          <div className="">
+            <div>
+              <div className="shadow-xl card w-96 bg-base-100">
+                <div className="card-body">
+                  <h2 className="card-title">Card title!</h2>
+                  <p>If a dog chews shoes whose shoes does he choose?</p>
+                  <div className="justify-end card-actions">
+                    <button className="btn btn-primary">Buy Now</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </main>
     </>
