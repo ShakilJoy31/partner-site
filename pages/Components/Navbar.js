@@ -27,14 +27,14 @@ const Navbar = () => {
             >
               Papita
             </span>
-            <span
+            {/* <span
               style={{
                 color: "#FFE15D",
               }}
               className="hidden lg:block md:block"
             >
               Nationwide! FREE Shipping on All Orders
-            </span>
+            </span> */}
           </span>{" "}
         </Link>
 
@@ -170,7 +170,7 @@ const Navbar = () => {
 
 
           {/* Kids */}
-          <div className="mr-6  dropdown-hover dropdown dropdown-bottom dropdown-end">
+          <div className="mr-6 dropdown-hover dropdown dropdown-bottom dropdown-end">
             <label tabIndex={0} className="m-1">
               <span className="cursor-pointer">
                 Kids

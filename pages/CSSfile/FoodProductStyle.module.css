@@ -15,8 +15,10 @@
 }
 
 .tradingRight:hover {
+    box-shadow: 2px 2px 15px 5px #05b4ef;
     box-shadow: 2px 2px 15px 5px black;
     transition-duration: 200ms;
+    cursor: pointer;
 }
 
 .trading {

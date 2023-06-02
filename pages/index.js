@@ -1,10 +1,15 @@
 import Head from "next/head";
 import { Inter } from "next/font/google";
 import HomeComponent from "./Components/HomeComponent";
-import { MdLocalShipping } from "react-icons/md";
+import { MdDiscount, MdLocalShipping, MdPayments } from "react-icons/md";
 import { MdLabelImportant } from "react-icons/md";
 import { BsCurrencyDollar } from "react-icons/bs";
 import { BsAwardFill } from "react-icons/bs";
+import { MdSupportAgent } from "react-icons/md";
+import { FaPlane } from "react-icons/fa";
+import CustomStyle from './CSSfile/FoodProductStyle.module.css'
+import AboutEcommarse from "./Components/AboutEcommarse";
+import ShopByBrandsSlider from "./Components/ShopByBrandsSlider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -38,114 +43,12 @@ export default function Home() {
         >
           <HomeComponent></HomeComponent>
         </div>
-        <div className="px-3 pt-3 lg:px-12 md:px-8 ">
-          <div className="grid grid-cols-1 gap-6 lg:grid-cols-4 md:grid-cols-3">
-            {/* First Shipping */}
-            <div>
-              <div
-                style={{
-                  borderRadius: "5px",
-                  backgroundImage: "linear-gradient(45deg ,#0C134F, #643843)",
-                  backgroundSize: "100%",
-                  backgroundRepeat: "repeat",
-                  color: "white",
-                }}
-                className="shadow-xl card"
-              >
-                <div className="card-body">
-                  <div className="flex items-center">
-                    <span>
-                      <MdLocalShipping size={45}></MdLocalShipping>
-                    </span>
-                    <div className="ml-4">
-                      <h2 className="card-title">First Shipping</h2>
-                      <p>Easy Returns</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <div style={{background: '#05b4ef'}} className="px-3 py-8 lg:px-12 md:px-8 ">
+          <AboutEcommarse></AboutEcommarse>
+        </div>
 
-            {/* Genuine Products */}
-            <div>
-              <div
-                style={{
-                  borderRadius: "5px",
-                  backgroundImage: "linear-gradient(45deg ,#0C134F, #643843)",
-                  backgroundSize: "100%",
-                  backgroundRepeat: "repeat",
-                  color: "white",
-                }}
-                className="shadow-xl card"
-              >
-                <div className="card-body">
-                  <div className="flex items-center">
-                    <span>
-                      <MdLabelImportant size={45}></MdLabelImportant>
-                    </span>
-                    <div className="ml-4">
-                      <h2 className="card-title">Genuine Products</h2>
-                      <p>Brand Warranty</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Easy Payment */}
-            <div>
-              <div
-                style={{
-                  borderRadius: "5px",
-                  backgroundImage: "linear-gradient(45deg ,#0C134F, #643843)",
-                  backgroundSize: "100%",
-                  backgroundRepeat: "repeat",
-                  color: "white",
-                }}
-                className="shadow-xl card"
-              >
-                <div className="card-body">
-                  <div className="flex items-center">
-                    <span>
-                      <BsCurrencyDollar size={45}></BsCurrencyDollar>
-                    </span>
-                    <div className="ml-4">
-                      <h2 className="card-title">Easy Payments</h2>
-                      <p>Pay Online & COD Discounts</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-
-            {/* 30 years experience */}
-            <div>
-              <div
-                style={{
-                  borderRadius: "5px",
-                  backgroundImage: "linear-gradient(45deg ,#0C134F, #643843)",
-                  backgroundSize: "100%",
-                  backgroundRepeat: "repeat",
-                  color: "white",
-                }}
-                className="shadow-xl card"
-              >
-                <div className="card-body">
-                  <div className="flex items-center">
-                    <span>
-                      <BsAwardFill size={45}></BsAwardFill>
-                    </span>
-                    <div className="ml-4">
-                      <h2 className="card-title">
-30 Years Experience</h2>
-                      <p>Trusted Since 1992</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div>
+          <ShopByBrandsSlider></ShopByBrandsSlider>
         </div>
       </main>
     </>
