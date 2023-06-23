@@ -10,6 +10,7 @@ import { FaPlane } from "react-icons/fa";
 import CustomStyle from './CSSfile/FoodProductStyle.module.css'
 import AboutEcommarse from "./Components/AboutEcommarse";
 import ShopByBrandsSlider from "./Components/ShopByBrandsSlider";
+import Spinner from "./Components/Spinner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -50,6 +51,8 @@ export default function Home() {
         <div>
           <ShopByBrandsSlider></ShopByBrandsSlider>
         </div>
+
+        
       </main>
     </>
   );
