@@ -1,5 +1,6 @@
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import ComponentStyle from './ComponentStyle.module.css'
 
 const ShopByBrandsSlider = () => {
   const settings = {
@@ -31,7 +32,7 @@ const ShopByBrandsSlider = () => {
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 2,
           slidesToScroll: 1,
         },
       },
@@ -43,91 +44,91 @@ const ShopByBrandsSlider = () => {
       <h1 style={{borderBottom: '2px solid red'}} className="flex justify-center pb-4 mx-2 my-4 text-2xl md:text-3xl lg:text-4xl">Shops By Brand</h1>
       <div>
       <Slider {...settings}>
-        <div>
+        <div className={`${ComponentStyle.brandCard}`}>
           <img
-            className=""
+            className={`${ComponentStyle.brandImage}`}
             src="https://w7.pngwing.com/pngs/2/19/png-transparent-logo-samsung-electronics-organization-samsung-galaxy-samsung-blue-company-label.png"
             alt="Shoes"
           />
         </div>
 
-        <div>
+        <div className={`${ComponentStyle.brandCard}`}>
           <img
-            className=""
+            className={`${ComponentStyle.brandImage}`}
             src="https://w7.pngwing.com/pngs/2/19/png-transparent-logo-samsung-electronics-organization-samsung-galaxy-samsung-blue-company-label.png"
             alt="Shoes"
           />
         </div>
 
-        <div>
+        <div className={`${ComponentStyle.brandCard}`}>
           <img
-            className=""
+            className={`${ComponentStyle.brandImage}`}
             src="https://w7.pngwing.com/pngs/2/19/png-transparent-logo-samsung-electronics-organization-samsung-galaxy-samsung-blue-company-label.png"
             alt="Shoes"
           />
         </div>
 
-        <div>
+        <div className={`${ComponentStyle.brandCard}`}>
           <img
-            className=""
+            className={`${ComponentStyle.brandImage}`}
             src="https://w7.pngwing.com/pngs/2/19/png-transparent-logo-samsung-electronics-organization-samsung-galaxy-samsung-blue-company-label.png"
             alt="Shoes"
           />
         </div>
 
-        <div>
+        <div className={`${ComponentStyle.brandCard}`}>
           <img
-            className=""
+            className={`${ComponentStyle.brandImage}`}
             src="https://w7.pngwing.com/pngs/2/19/png-transparent-logo-samsung-electronics-organization-samsung-galaxy-samsung-blue-company-label.png"
             alt="Shoes"
           />
         </div>
 
-        <div>
+        <div className={`${ComponentStyle.brandCard}`}>
           <img
-            className=""
+            className={`${ComponentStyle.brandImage}`}
             src="https://w7.pngwing.com/pngs/2/19/png-transparent-logo-samsung-electronics-organization-samsung-galaxy-samsung-blue-company-label.png"
             alt="Shoes"
           />
         </div>
-        <div>
+        <div className={`${ComponentStyle.brandCard}`}>
           <img
-            className=""
+            className={`${ComponentStyle.brandImage}`}
             src="https://w7.pngwing.com/pngs/2/19/png-transparent-logo-samsung-electronics-organization-samsung-galaxy-samsung-blue-company-label.png"
             alt="Shoes"
           />
         </div>
-        <div>
+        <div className={`${ComponentStyle.brandCard}`}>
           <img
-            className=""
+            className={`${ComponentStyle.brandImage}`}
             src="https://w7.pngwing.com/pngs/2/19/png-transparent-logo-samsung-electronics-organization-samsung-galaxy-samsung-blue-company-label.png"
             alt="Shoes"
           />
         </div>
-        <div>
+        <div className={`${ComponentStyle.brandCard}`}>
           <img
-            className=""
+            className={`${ComponentStyle.brandImage}`}
             src="https://w7.pngwing.com/pngs/2/19/png-transparent-logo-samsung-electronics-organization-samsung-galaxy-samsung-blue-company-label.png"
             alt="Shoes"
           />
         </div>
-        <div>
+        <div className={`${ComponentStyle.brandCard}`}>
           <img
-            className=""
+            className={`${ComponentStyle.brandImage}`}
             src="https://w7.pngwing.com/pngs/2/19/png-transparent-logo-samsung-electronics-organization-samsung-galaxy-samsung-blue-company-label.png"
             alt="Shoes"
           />
         </div>
-        <div>
+        <div className={`${ComponentStyle.brandCard}`}>
           <img
-            className=""
+            className={`${ComponentStyle.brandImage}`}
             src="https://w7.pngwing.com/pngs/2/19/png-transparent-logo-samsung-electronics-organization-samsung-galaxy-samsung-blue-company-label.png"
             alt="Shoes"
           />
         </div>
-        <div>
+        <div className={`${ComponentStyle.brandCard}`}>
           <img
-            className=""
+            className={`${ComponentStyle.brandImage}`}
             src="https://w7.pngwing.com/pngs/2/19/png-transparent-logo-samsung-electronics-organization-samsung-galaxy-samsung-blue-company-label.png"
             alt="Shoes"
           />

@@ -11,6 +11,10 @@ import CustomStyle from './CSSfile/FoodProductStyle.module.css'
 import AboutEcommarse from "./Components/AboutEcommarse";
 import ShopByBrandsSlider from "./Components/ShopByBrandsSlider";
 import Spinner from "./Components/Spinner";
+import BestSelling from "./Components/BestSelling";
+import PopularThisWeek from "./Components/PopularThisWeek";
+import TrandingProducts from "./Components/TrandingProducts";
+import ProductsOfInterest from "./Components/ProductsOfInterest";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -48,11 +52,27 @@ export default function Home() {
           <AboutEcommarse></AboutEcommarse>
         </div>
 
-        <div>
+        <div style={{
+          overflowX: 'hidden'
+        }}>
           <ShopByBrandsSlider></ShopByBrandsSlider>
         </div>
 
-        
+        <div>
+          <BestSelling></BestSelling>
+        </div>
+
+        <div>
+          <TrandingProducts></TrandingProducts>
+        </div>
+
+        <div>
+          <PopularThisWeek></PopularThisWeek>
+        </div>
+
+        <div>
+          <ProductsOfInterest></ProductsOfInterest>
+        </div>
       </main>
     </>
   );

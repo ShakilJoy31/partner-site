@@ -1,11 +1,13 @@
-const BestSelling = () => {
-  return (
-    <div>
+import React from 'react';
+
+const ProductsOfInterest = () => {
+    return (
+        <div>
       <h1
         style={{ borderBottom: "2px solid red" }}
         className="flex justify-center pb-4 mx-2 my-4 text-2xl md:text-3xl lg:text-4xl"
       >
-        PAPITA BESTSELLERS
+        PRODUCTS OF INTERESTS
       </h1>
 
       <div className="grid grid-cols-2 gap-3 lg:grid-cols-6 md:grid-cols-4">
@@ -83,7 +85,7 @@ const BestSelling = () => {
         </div>
       </div>
     </div>
-  );
+    );
 };
 
-export default BestSelling;
+export default ProductsOfInterest;
