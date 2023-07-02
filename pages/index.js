@@ -1,16 +1,16 @@
 import Head from "next/head";
 import { Inter } from "next/font/google";
 import HomeComponent from "./Components/HomeComponent";
-import { MdDiscount, MdLocalShipping, MdPayments } from "react-icons/md";
-import { MdLabelImportant } from "react-icons/md";
-import { BsCurrencyDollar } from "react-icons/bs";
-import { BsAwardFill } from "react-icons/bs";
-import { MdSupportAgent } from "react-icons/md";
-import { FaPlane } from "react-icons/fa";
-import CustomStyle from './CSSfile/FoodProductStyle.module.css'
+// import { MdDiscount, MdLocalShipping, MdPayments } from "react-icons/md";
+// import { MdLabelImportant } from "react-icons/md";
+// import { BsCurrencyDollar } from "react-icons/bs";
+// import { BsAwardFill } from "react-icons/bs";
+// import { MdSupportAgent } from "react-icons/md";
+// import { FaPlane } from "react-icons/fa";
+// import CustomStyle from './CSSfile/FoodProductStyle.module.css'
 import AboutEcommarse from "./Components/AboutEcommarse";
 import ShopByBrandsSlider from "./Components/ShopByBrandsSlider";
-import Spinner from "./Components/Spinner";
+// import Spinner from "./Components/Spinner";
 import BestSelling from "./Components/BestSelling";
 import PopularThisWeek from "./Components/PopularThisWeek";
 import TrandingProducts from "./Components/TrandingProducts";
