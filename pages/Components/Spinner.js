@@ -1,5 +1,3 @@
-import ComponentStyle from './ComponentStyle.module.css'; 
-
 const Spinner = ({size}) => {
     console.log(size);
     return (
