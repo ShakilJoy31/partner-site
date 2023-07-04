@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import HomeComponent from "./CSSfile/ComponentStyle.module.css";
-import { BsArrowRight } from "react-icons/bs";
 import { BsFillInfoCircleFill } from "react-icons/bs";
 import { CiLocationOn } from "react-icons/ci";
 
@@ -39,8 +38,35 @@ const AllBusinessData = () => {
       .then((data) => setBusinessData(data.data));
   }, []);
   const [updateAbleUser, setUpdateAbleUser] = useState(); 
-  console.log(updateAbleUser);
-  return (
+  const userData = {
+    businessName: businessName,
+    country: country,
+    state: state,
+    bannerImg: hostedImage,
+    city: city,
+    email: email,
+    address: address,
+    contactNo: mobileNumber,
+    openingTime: openingTime,
+    closingTime: closingTime
+  }
+  const handleUpdateBusinessInformation = () =>{
+    try {
+        const Options = {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(userData)
+        }
+        fetch(`http://localhost:5000/api/v1/onboarding/${updateAbleUser?._id}`, Options)
+        .then(res => res.json())
+        .then(data => console.log(data))
+    } catch (error) {
+        return (error);
+    }
+  }
+  return ( 
     <div className="mr-4">
       <div className="overflow-x-auto">
         <table className="table w-full">
@@ -151,7 +177,7 @@ const AllBusinessData = () => {
                         </label>
                         <input
                           onChange={(e) => {
-                            setBusinessName();
+                            setBusinessName(e.target.value);
                           }}
                           
                           type="text"
@@ -443,7 +469,8 @@ const AllBusinessData = () => {
                         </div>
 
                         <label
-                        htmlFor="afterProceedModal"
+                        onClick={handleUpdateBusinessInformation}
+                       
                           style={{
                             backgroundImage:
                               "linear-gradient(45deg ,#5D9C59, #3E54AC)",
