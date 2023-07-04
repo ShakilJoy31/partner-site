@@ -1,8 +1,47 @@
+import { useState } from "react";
 import HomeComponentCss from "./CSSfile/ComponentStyle.module.css";
 import { BsArrowRight } from "react-icons/bs";
 import { BsFillInfoCircleFill } from "react-icons/bs";
 
 const ManagerDetails = () => {
+  const [fullName, setFullName] = useState();
+  const [state, setState] = useState();
+  const [city, setCity] = useState();
+  const [country, setCountry] = useState();
+  const [address, setAddress] = useState();
+  const [email, setEmail] = useState();
+  const [mobileNumber, setMobileNumber] = useState();
+  const [image, setImage] = useState();
+  const [hostedImage, setHostedImage] = useState("");
+
+  const userData = {
+    fullName: fullName,
+    country: country,
+    state: state,
+    bannerImg: hostedImage,
+    city: city,
+    email: email,
+    address: address,
+    contactNo: mobileNumber,
+  }
+  const ImageStorageKey = "1f2e07ae412954d520f52351b07dee66";
+  if (image) {
+    const formDataImage = new FormData();
+    formDataImage.append("image", image);
+    const url = `https://api.imgbb.com/1/upload?key=${ImageStorageKey}`;
+    fetch(url, {
+      method: "POST",
+      body: formDataImage,
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        setHostedImage(result?.data?.display_url);
+      });
+    setImage("");
+  }
+  const handleSaveOwnerInformationToDatabase = () =>{
+    console.log(userData);
+  }
   return (
     <div className="mb-8">
       <div className="flex items-center justify-between">
@@ -22,13 +61,14 @@ const ManagerDetails = () => {
             See All
           </label>
 
-          <label
+          <label onClick={handleSaveOwnerInformationToDatabase}
             style={{
               backgroundImage: "linear-gradient(45deg ,#FEA1BF, #BFEAF5)",
               backgroundSize: "100%",
               backgroundRepeat: "repeat",
             }}
             className={`normal-case btn border-0 text-xl text-black w-32`}
+            disabled={!hostedImage}
           >
             Save
           </label>
@@ -59,7 +99,7 @@ const ManagerDetails = () => {
                     ></BsFillInfoCircleFill>
                   </span>
                 </label>
-                <input
+                <input onChange={(e)=> setFullName(e.target.value)}
                   type="text"
                   placeholder="Type here"
                   className={`w-[360px] input border-0 focus:outline-none ${HomeComponentCss.customInput}`}
@@ -69,7 +109,7 @@ const ManagerDetails = () => {
               <div className=" form-control mt-[25px]">
                 <label className="label">
                   <span className={`${HomeComponentCss.inputHead}`}>
-                    Country
+                    State *
                   </span>
                   <span className="label-text-alt">
                     <BsFillInfoCircleFill
@@ -78,7 +118,7 @@ const ManagerDetails = () => {
                     ></BsFillInfoCircleFill>
                   </span>
                 </label>
-                <input
+                <input onChange={(e)=> setState(e.target.value)}
                   type="text"
                   placeholder="Type here"
                   className={`w-[360px] input border-0 focus:outline-none ${HomeComponentCss.customInput}`}
@@ -99,24 +139,47 @@ const ManagerDetails = () => {
                 </span>
               </label>
 
-              <div
-                style={{
-                  borderRadius: "8px",
-                  border: "1px solid rgba(18, 18, 18, 0.16)",
-                  background: "rgba(229, 229, 229, 0.4)",
-                  color: "black",
-                }}
-                className={`$${HomeComponentCss.customInputImageUpload} w-[120px] h-[120px]`}
-              >
-                <img
-                  className="block mx-auto mt-[32px]"
-                  src="https://i.ibb.co/HrSFsdc/upload-cloud.png"
-                  alt=""
-                />
-                <p className="flex justify-center text-black">
-                  Click to upload
-                </p>
+
+              <div className="flex items-center justify-between">
+                <div
+                  style={{
+                    borderRadius: "8px",
+                    border: "1px solid rgba(18, 18, 18, 0.16)",
+                    background: "rgba(229, 229, 229, 0.4)",
+                    color: "black",
+                  }}
+                  className={`$${HomeComponentCss.customInputImageUpload} w-[120px] h-[120px] cursor-pointer`}
+                >
+                  <input
+                    onChange={(e) => {
+                      setImage(e?.target?.files[0]);
+                    }}
+                    style={{ position: "absolute", opacity: "0" }}
+                    type="file"
+                    className="h-[120px]"
+                  />
+                  <img
+                    className="block mx-auto mt-[32px]"
+                    src="https://i.ibb.co/HrSFsdc/upload-cloud.png"
+                    alt=""
+                  />
+                  <p className="flex justify-center text-black">
+                    Click to upload
+                  </p>
+                </div>
+
+                {/* Image preview */}
+                {hostedImage && (
+                  <div>
+                    <img
+                      className="w-[120px] h-[120px] rounded-sm"
+                      src={hostedImage}
+                      alt=""
+                    />
+                  </div>
+                )}
               </div>
+
             </div>
           </div>
 
@@ -131,7 +194,7 @@ const ManagerDetails = () => {
                   ></BsFillInfoCircleFill>
                 </span>
               </label>
-              <input
+              <input onChange={(e)=> setCity(e.target.value)}
                 type="text"
                 placeholder="Type here"
                 className={`w-[360px] input border-0 focus:outline-none ${HomeComponentCss.customInput}`}
@@ -150,7 +213,7 @@ const ManagerDetails = () => {
                   ></BsFillInfoCircleFill>
                 </span>
               </label>
-              <input
+              <input onChange={(e)=> setCountry(e.target.value)}
                 type="text"
                 placeholder="Type here"
                 className={`w-[360px] input border-0 focus:outline-none ${HomeComponentCss.customInput}`}
@@ -172,7 +235,7 @@ const ManagerDetails = () => {
                   ></BsFillInfoCircleFill>
                 </span>
               </label>
-              <input
+              <input onChange={(e)=> setAddress(e.target.value)}
                 type="text"
                 placeholder="Type here"
                 className={`w-full input border-0 focus:outline-none ${HomeComponentCss.customInput}`}
@@ -198,7 +261,7 @@ const ManagerDetails = () => {
               <div
                 className={`${HomeComponentCss.backGround} w-[360px] flex justify-between items-center`}
               >
-                <input
+                <input onChange={(e)=> setEmail(e.target.value)}
                   type="email"
                   placeholder="Type here"
                   className={`w-full input border-0 focus:outline-none ${HomeComponentCss.customInputDifferent}`}
@@ -226,7 +289,7 @@ const ManagerDetails = () => {
               <div
                 className={`${HomeComponentCss.backGround} w-[360px] flex justify-between items-center`}
               >
-                <input
+                <input onChange={(e)=> setMobileNumber(e.target.value)}
                   type="email"
                   placeholder="Type here"
                   className={`w-full input border-0 focus:outline-none ${HomeComponentCss.customInputDifferent}`}

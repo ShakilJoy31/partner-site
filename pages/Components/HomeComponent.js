@@ -64,11 +64,9 @@ const HomeComponent = () => {
       });
     setImage("");
   }
-
   const handleProceedToOwnerAndManagerDetails = () => {
     router.push('/managerDetails')
   };
-
   const userData = {
     businessName: businessName,
     country: country,
@@ -81,9 +79,6 @@ const HomeComponent = () => {
     openingTime: openingTime,
     closingTime: closingTime
   }
-
-  console.log(userData)
-
   const handleSaveInformation = async () =>{
       try {
         const Option = {

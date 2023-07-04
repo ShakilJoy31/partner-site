@@ -25,13 +25,7 @@ export default function Home() {
         />
       </Head>
       <main>
-        <div
-          style={{
-            width: "100%",
-            overflow: "hidden",
-            position: "relative",
-          }}
-        >
+        <div>
           <HomeComponent></HomeComponent>
         </div>
       </main>
