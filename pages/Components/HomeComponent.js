@@ -4,8 +4,10 @@ import { BsArrowRight } from "react-icons/bs";
 import { BsFillInfoCircleFill } from "react-icons/bs";
 import { CiLocationOn } from "react-icons/ci";
 import { useEffect } from "react";
+import { useRouter } from "next/router";
 
 const HomeComponent = () => {
+  const router = useRouter();
   const [businessName, setBusinessName] = useState();
   const [country, setCountry] = useState();
   const [state, setState] = useState();
@@ -20,28 +22,28 @@ const HomeComponent = () => {
     if (JSON.parse(localStorage.getItem("businessName"))) {
       setBusinessName(JSON.parse(localStorage.getItem("businessName")));
     }
-     if (JSON.parse(localStorage.getItem("country"))) {
+    if (JSON.parse(localStorage.getItem("country"))) {
       setCountry(JSON.parse(localStorage.getItem("country")));
     }
-     if (JSON.parse(localStorage.getItem("state"))) {
+    if (JSON.parse(localStorage.getItem("state"))) {
       setState(JSON.parse(localStorage.getItem("state")));
     }
-     if (JSON.parse(localStorage.getItem("city"))) {
+    if (JSON.parse(localStorage.getItem("city"))) {
       setCity(JSON.parse(localStorage.getItem("city")));
     }
-     if (JSON.parse(localStorage.getItem("address"))) {
+    if (JSON.parse(localStorage.getItem("address"))) {
       setAddress(JSON.parse(localStorage.getItem("address")));
     }
-     if (JSON.parse(localStorage.getItem("openingTime"))) {
+    if (JSON.parse(localStorage.getItem("openingTime"))) {
       setOpeningTime(JSON.parse(localStorage.getItem("openingTime")));
     }
-     if (JSON.parse(localStorage.getItem("closingTime"))) {
+    if (JSON.parse(localStorage.getItem("closingTime"))) {
       setClosingTime(JSON.parse(localStorage.getItem("closingTime")));
     }
-     if (JSON.parse(localStorage.getItem("email"))) {
+    if (JSON.parse(localStorage.getItem("email"))) {
       setEmail(JSON.parse(localStorage.getItem("email")));
     }
-     if (JSON.parse(localStorage.getItem("mobile"))) {
+    if (JSON.parse(localStorage.getItem("mobile"))) {
       setMobileNumber(JSON.parse(localStorage.getItem("mobile")));
     }
   }, []);
@@ -63,7 +65,6 @@ const HomeComponent = () => {
     setImage("");
   }
 
-
   const handleProceedToOwnerAndManagerDetails = () => {
     console.log(
       businessName,
@@ -77,11 +78,85 @@ const HomeComponent = () => {
       mobileNumber
     );
   };
+
+  const userData = {
+    businessName: businessName,
+    country: country,
+    state: state,
+    bannerImg: hostedImage,
+    city: city,
+    email: email,
+    address: address,
+    contactNo: mobileNumber,
+    openingTime: openingTime,
+    closingTime: closingTime
+  }
+  console.log(userData)
+
+  const handleSaveInformation = () =>{
+    console.log(userData)
+    if(businessName && country && state && hostedImage && city && email && address && mobileNumber && openingTime && closingTime){
+      
+    }
+    else{
+      console.log('sob data nai.')
+    }
+    try {
+      const Option = {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(userData)
+      }
+      fetch(`http://localhost:5000/api/v1/onboarding/page1`, Option)
+      .then(res => res.json())
+      .then(data => console.log(data))
+  } catch (error) {
+      return (error.message);
+  }
+  }
   return (
     <div className="mb-8">
-      <h1 className={`${HomeComponentCss.BusinessInfo} mb-[48px]`}>
-        Business Information
-      </h1>
+      <div className="flex items-center justify-between mb-[48px]">
+        <h1 className={`${HomeComponentCss.BusinessInfo} `}>
+          Business Information
+        </h1>
+
+        <div>
+        <label onClick={()=>{
+          router.push('/allBusinessData')
+        }}
+          style={{
+            backgroundImage: "linear-gradient(45deg ,#FEA1BF, #BFEAF5)",
+            backgroundSize: "100%",
+            backgroundRepeat: "repeat",
+          }}
+          className={`normal-case btn border-0 text-xl text-black w-32 mx-4`}
+        >
+          See All
+        </label>
+
+          
+           <label 
+            onClick={handleSaveInformation}
+              style={{
+                backgroundImage: "linear-gradient(45deg ,#FEA1BF, #BFEAF5)",
+                backgroundSize: "100%",
+                backgroundRepeat: "repeat",
+              }}
+              className={`normal-case btn border-0 text-xl text-black w-32`}
+              disabled={!hostedImage}
+            >
+              Save
+            </label>
+
+            {/* (businessName && country && state && hostedImage && city && email && address && mobileNumber && openingTime && closingTime) */}
+        
+        </div>
+        
+      </div>
+
       <div>
         <div>
           <div className="flex justify-between">
@@ -376,40 +451,45 @@ const HomeComponent = () => {
                 </span>
               </label>
 
-              <div className="flex justify-between items-center">
-              <div
-                style={{
-                  borderRadius: "8px",
-                  border: "1px solid rgba(18, 18, 18, 0.16)",
-                  background: "rgba(229, 229, 229, 0.4)",
-                  color: "black",
-                }}
-                className={`$${HomeComponentCss.customInputImageUpload} w-[120px] h-[120px] cursor-pointer`}
-              >
-                <input onChange={(e)=>{
-                  setImage(e?.target?.files[0])
-                }} style={{position:'absolute', opacity:'0'}} type="file" className="h-[120px]"/>
-                <img
-                  className="block mx-auto mt-[32px]"
-                  src="https://i.ibb.co/HrSFsdc/upload-cloud.png"
-                  alt=""
-                />
-                <p className="flex justify-center text-black">
-                  Click to upload
-                </p>
-              </div>
+              <div className="flex items-center justify-between">
+                <div
+                  style={{
+                    borderRadius: "8px",
+                    border: "1px solid rgba(18, 18, 18, 0.16)",
+                    background: "rgba(229, 229, 229, 0.4)",
+                    color: "black",
+                  }}
+                  className={`$${HomeComponentCss.customInputImageUpload} w-[120px] h-[120px] cursor-pointer`}
+                >
+                  <input
+                    onChange={(e) => {
+                      setImage(e?.target?.files[0]);
+                    }}
+                    style={{ position: "absolute", opacity: "0" }}
+                    type="file"
+                    className="h-[120px]"
+                  />
+                  <img
+                    className="block mx-auto mt-[32px]"
+                    src="https://i.ibb.co/HrSFsdc/upload-cloud.png"
+                    alt=""
+                  />
+                  <p className="flex justify-center text-black">
+                    Click to upload
+                  </p>
+                </div>
 
                 {/* Image preview */}
-                {
-                  hostedImage && <div>
-                    <img className="w-[120px] h-[120px] rounded-sm" src={hostedImage} alt="" />
+                {hostedImage && (
+                  <div>
+                    <img
+                      className="w-[120px] h-[120px] rounded-sm"
+                      src={hostedImage}
+                      alt=""
+                    />
                   </div>
-                }
+                )}
               </div>
-
-              
-
-
             </div>
           </div>
 

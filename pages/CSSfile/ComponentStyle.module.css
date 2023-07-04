@@ -201,3 +201,25 @@
   border: 1px solid #dc3545;
   color: #DC3545;
 }
+.updateButton:hover{
+    box-shadow: 2px 2px 15px 5px lightblue;
+    transition-duration: 100ms;
+    border-radius: 2px;
+}
+.FinallyUpdateButton:hover{
+  box-shadow: 2px 2px 15px 5px black;
+    transition-duration: 100ms;
+    border-radius: 2px;
+}
+
+.tableRow {
+  color: white;
+  transition-duration: 200ms;
+  cursor: pointer;
+}
+
+.tableRow:hover {
+  color: orangered;
+  transition-duration: 200ms;
+  cursor: pointer;
+}
