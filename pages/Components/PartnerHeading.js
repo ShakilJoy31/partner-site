@@ -17,7 +17,7 @@ const PartnerHeading = () => {
         setBusinessInfo(false)
         setManagerDetails(true);
       }
-  },[])
+  },[router.pathname])
   return (
     <div>
       <div

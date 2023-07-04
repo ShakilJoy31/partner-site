@@ -17,6 +17,7 @@ const AllBusinessData = () => {
   const [image, setImage] = useState();
   const [businessData, setBusinessData] = useState([]);
   const [hostedImage, setHostedImage] = useState("");
+  const [updated, setUpdated] = useState(false); 
   const ImageStorageKey = "1f2e07ae412954d520f52351b07dee66";
   if (image) {
     const formDataImage = new FormData();
@@ -33,10 +34,10 @@ const AllBusinessData = () => {
     setImage("");
   }
   useEffect(() => {
-    fetch(`http://localhost:5000/api/v1/onboarding/page1`)
+    fetch(`https://buisness-assignment.onrender.com/api/v1/onboarding/page1`)
       .then((res) => res.json())
       .then((data) => setBusinessData(data.data));
-  }, []);
+  }, [updated]);
   const [updateAbleUser, setUpdateAbleUser] = useState(); 
   const userData = {
     businessName: businessName,
@@ -59,9 +60,9 @@ const AllBusinessData = () => {
             },
             body: JSON.stringify(userData)
         }
-        fetch(`http://localhost:5000/api/v1/onboarding/${updateAbleUser?._id}`, Options)
+        fetch(`https://buisness-assignment.onrender.com/api/v1/onboarding/${updateAbleUser?._id}`, Options)
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data => setUpdated(true))
     } catch (error) {
         return (error);
     }
@@ -460,7 +461,7 @@ const AllBusinessData = () => {
                               <div>
                                 <img
                                   className="w-[120px] h-[120px] rounded-sm"
-                                  src={hostedImage ? hostedImage : updateAbleUser?.bannerImg                                  }
+                                  src={hostedImage ? hostedImage : updateAbleUser?.bannerImg}
                                   alt=""
                                 />
                               </div>
@@ -470,7 +471,7 @@ const AllBusinessData = () => {
 
                         <label
                         onClick={handleUpdateBusinessInformation}
-                       
+                        htmlFor="afterProceedModal"
                           style={{
                             backgroundImage:
                               "linear-gradient(45deg ,#5D9C59, #3E54AC)",

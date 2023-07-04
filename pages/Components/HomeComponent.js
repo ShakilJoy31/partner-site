@@ -66,17 +66,7 @@ const HomeComponent = () => {
   }
 
   const handleProceedToOwnerAndManagerDetails = () => {
-    console.log(
-      businessName,
-      country,
-      state,
-      city,
-      address,
-      openingTime,
-      closingTime,
-      email,
-      mobileNumber
-    );
+    router.push('/managerDetails')
   };
 
   const userData = {
@@ -91,31 +81,26 @@ const HomeComponent = () => {
     openingTime: openingTime,
     closingTime: closingTime
   }
+
   console.log(userData)
 
-  const handleSaveInformation = () =>{
-    console.log(userData)
-    if(businessName && country && state && hostedImage && city && email && address && mobileNumber && openingTime && closingTime){
-      
+  const handleSaveInformation = async () =>{
+      try {
+        const Option = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(userData)
+        }
+        fetch(`https://buisness-assignment.onrender.com/api/v1/onboarding/page1`, Option)
+        .then(res => res.json())
+        .then(data => console.log(data))
+    } catch (error) {
+        return (error.message);
     }
-    else{
-      console.log('sob data nai.')
-    }
-    try {
-      const Option = {
-          method: 'POST',
-          headers: {
-              'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(userData)
-      }
-      fetch(`http://localhost:5000/api/v1/onboarding/page1`, Option)
-      .then(res => res.json())
-      .then(data => console.log(data))
-  } catch (error) {
-      return (error.message);
   }
-  }
+  console.log(businessName)
   return (
     <div className="mb-8">
       <div className="flex items-center justify-between mb-[48px]">
