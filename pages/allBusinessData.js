@@ -43,7 +43,7 @@ const AllBusinessData = () => {
     businessName: businessName,
     country: country,
     state: state,
-    bannerImg: hostedImage,
+    bannerImg: hostedImage || updateAbleUser?.bannerImg,
     city: city,
     email: email,
     address: address,

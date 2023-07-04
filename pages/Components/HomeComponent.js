@@ -5,6 +5,8 @@ import { BsFillInfoCircleFill } from "react-icons/bs";
 import { CiLocationOn } from "react-icons/ci";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const HomeComponent = () => {
   const router = useRouter();
@@ -90,12 +92,16 @@ const HomeComponent = () => {
         }
         fetch(`https://buisness-assignment.onrender.com/api/v1/onboarding/page1`, Option)
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data => {
+          if(data.success === true){
+          toast.success('Operation is Success!')
+          }
+        })
     } catch (error) {
         return (error.message);
     }
   }
-  console.log(businessName)
+  console.log(userData)
   return (
     <div className="mb-8">
       <div className="flex items-center justify-between mb-[48px]">
@@ -158,7 +164,7 @@ const HomeComponent = () => {
                     "businessName",
                     JSON.stringify(e.target.value)
                   );
-                  setBusinessName();
+                  setBusinessName(e.target.value);
                 }}
                 value={businessName}
                 type="text"
@@ -490,6 +496,7 @@ const HomeComponent = () => {
           </div>
         </div>
       </div>
+      <ToastContainer></ToastContainer>
     </div>
   );
 };

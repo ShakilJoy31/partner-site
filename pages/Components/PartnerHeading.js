@@ -13,7 +13,7 @@ const PartnerHeading = () => {
   const [previewDocument, setPreviewDocument] = useState(false);
   const [reachIncreased, setReachIncreased] = useState(false);
   useEffect(()=>{
-    if(router.pathname === '/managerDetails'){
+    if(router.pathname === '/managerDetails' || router.pathname === '/allInfo'){
         setBusinessInfo(false)
         setManagerDetails(true);
       }

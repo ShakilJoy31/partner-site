@@ -1,9 +1,12 @@
 import { useState } from "react";
 import HomeComponentCss from "./CSSfile/ComponentStyle.module.css";
-import { BsArrowRight } from "react-icons/bs";
 import { BsFillInfoCircleFill } from "react-icons/bs";
+import { useRouter } from "next/router";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ManagerDetails = () => {
+  const router = useRouter();
   const [fullName, setFullName] = useState();
   const [state, setState] = useState();
   const [city, setCity] = useState();
@@ -18,11 +21,11 @@ const ManagerDetails = () => {
     fullName: fullName,
     country: country,
     state: state,
-    bannerImg: hostedImage,
+    image: hostedImage,
     city: city,
     email: email,
     address: address,
-    contactNo: mobileNumber,
+    mobileNumber: mobileNumber,
   }
   const ImageStorageKey = "1f2e07ae412954d520f52351b07dee66";
   if (image) {
@@ -40,7 +43,24 @@ const ManagerDetails = () => {
     setImage("");
   }
   const handleSaveOwnerInformationToDatabase = () =>{
-    console.log(userData);
+    try {
+      const Option = {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(userData)
+      }
+      fetch(`https://buisness-assignment.onrender.com/api/v1/onboarding/page2`, Option)
+      .then(res => res.json())
+      .then(data => {
+        if(data.success === true){
+        toast.success('Operation is Success!')
+        }
+      })
+  } catch (error) {
+      return (error.message);
+  }
   }
   return (
     <div className="mb-8">
@@ -51,6 +71,7 @@ const ManagerDetails = () => {
         
         <div>
           <label
+          onClick={()=>router.push('/allInfo')}
             style={{
               backgroundImage: "linear-gradient(45deg ,#FEA1BF, #BFEAF5)",
               backgroundSize: "100%",
@@ -314,6 +335,7 @@ const ManagerDetails = () => {
           </div>
         </div>
       </div>
+      <ToastContainer></ToastContainer>
     </div>
   );
 };
