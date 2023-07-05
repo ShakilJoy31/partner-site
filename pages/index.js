@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { Inter } from "next/font/google";
 import HomeComponent from "./Components/HomeComponent";
+import GetLocation from "./Components/GetLocation";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,6 +28,7 @@ export default function Home() {
       <main>
         <div>
           <HomeComponent></HomeComponent>
+          {/* <GetLocation></GetLocation> */}
         </div>
       </main>
     </>

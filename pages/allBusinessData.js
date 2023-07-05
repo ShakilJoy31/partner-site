@@ -103,7 +103,8 @@ const AllBusinessData = () => {
                         {singleBusiness.businessName}
                       </div>
                       <div className="text-sm opacity-50">
-                        {singleBusiness.address}
+                        {singleBusiness.address.slice(0, 20)} <br />
+                        {singleBusiness.address.slice(22, 46)}
                       </div>
                     </div>
                   </div>

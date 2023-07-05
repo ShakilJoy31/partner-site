@@ -101,7 +101,16 @@ const HomeComponent = () => {
         return (error.message);
     }
   }
-  console.log(userData)
+  const [latitude, setLatitude] = useState(null);
+  const [longitude, setLongitude] = useState(null);
+  const handleGetMyLocation = () =>{
+      navigator.geolocation.getCurrentPosition(position => {
+          const {latitude, longitude} = position.coords;
+          setLatitude(latitude)
+          setLongitude(longitude)
+          console.log(latitude, longitude);
+      })
+  }
   return (
     <div className="mb-8">
       <div className="flex items-center justify-between mb-[48px]">
@@ -268,7 +277,7 @@ const HomeComponent = () => {
                 </span>
               </label>
 
-              <div
+              <div onClick={handleGetMyLocation}
                 className={`${HomeComponentCss.backGround} w-full flex justify-between items-center`}
               >
                 <input
@@ -279,7 +288,7 @@ const HomeComponent = () => {
                     );
                     setAddress(e.target.value);
                   }}
-                  value={address}
+                  value={(!latitude || !longitude) ? 'Click me for location' : 'Latitude: '+latitude+', Longitude: '+longitude}
                   type="text"
                   placeholder="Type here"
                   className={`w-full input border-0 focus:outline-none ${HomeComponentCss.customInputDifferent}`}
